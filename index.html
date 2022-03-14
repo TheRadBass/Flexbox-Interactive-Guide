@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,33;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <title>Flexbox guide</title>
+</head>
+
+<body>
+    
+    <main class="page-wrap">
+
+        <div class="title">
+
+            <h1>Flexbox Interactive Guide</h1>
+            <p class="title-paragraph">This interactive guide is inspired on the <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks.com's guide to Flexbox</a>
+                and has been made with the sole purpose of practicing what I've learned there.
+            <p>
+
+        </div>
+
+
+        <article>
+
+            <p>Flexbox is a flexible box layout. It gives us the power to create responsive layouts that can automatically arrange depending on the screen size.</p>
+            <p>It is based on a model that follows two directions, the main axis, that goes from the left to right, and the cross axis that goes from the top to the bottom.</p>
+            <br>
+
+           <details>
+            <p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).</p>
+            <p>If “regular” layout is based on both block and inline flow directions, the flex layout is based on “flex-flow directions”. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>
+            
+               <summary style="font-weight: bold; font-size: large;">Flexbox Basic Axis Information</summary>
+               <div class="example">
+                <img src="./Flexbox-basic.svg" id="flex-basic" alt="Image showing main and cross axis for a flexbox container, as well as the main and cross size, start and end.">
+               </div>
+
+            <p>Having trouble looking at the image? <a href="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" style="color: rgb(47, 131, 131);">Click here to take a closer look</a></p>
+            </details>
+
+                
+            <br>
+            <br>
+            <h1 style="text-align: center; font-size: 200%;">Properties for the Parent (flex container)</h1>
+            <p style=" font-weight:bold">Example:</p>
+            <p>Here we see a flex container with 3 items inside of it.</p>
+
+            <div class="example" id="flex-container-example">
+
+                <div class="example-graphic-container">
+
+                    <div class="color-example">
+                        <p id="container-identifier"></p>
+                        <p>Flex container</p>
+                        <p id="item-identifier"></p>
+                        <p>Flex item</p>
+                    </div>
+                    
+                    <div class="flex-example">
+                        
+                        <div class="flex-example-cross-axis">
+                            <p>Cross Axis ⬆⬇</p>   
+                        </div>
+        
+                        <div class="flex-container">
+        
+                            <div class="flex-item-normal">1</div>
+                            <div class="flex-item-normal">2</div>
+                            <div class="flex-item-normal">3</div>
+
+                        </div>
+
+                        <div class="flex-example-invisible-cross-axis"> <!--This is only here for the sake of centering the graphic, forgive my soul i'm still learning-->  
+                        </div>
+        
+                    </div>
+
+                    <div class="flex-example-main-axis">
+                        <p>Main Axis ⬅ ⮕</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+
+            <p>In order to define a flex container, we just need to add the property of "display: flex;" to the target's CSS:</p>
+
+            <div class="example">
+
+                <div class="code-container">
+                    <p class="code-comment">&lt;!-- html --&gt;</p>
+                    <p class="code">&lt;div <span class="code-class">class=</span><span class="code-string">"my-container"</span>&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>1</var>&lt;/div&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>2</var>&lt;/div&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>3</var>&lt;/div&gt;</p>
+                    <p class="code">&lt;/div&gt;</p>             
+                </div>
+
+
+                <div class="code-container">
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.my-container</var> {</p>
+                    <p class="code">display: <var>flex</var>; <span class="code-comment">/* or inline-flex */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p>And just like that, we have a flex container, which will inherit flex context for all of its direct children. </p>
+            <br><br>
+
+            <p style=" font-weight:bold">Flex Direction</p>
+            <p>By default, whenever we define a flex container its direction will be set to "row", which has its main axis fit the items from left to right, and its cross axis from the top to the bottom. 
+                However, we can change that with the "flex-direction" property:
+            </p>
+
+            <div class="example" id="flex-direction-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Flex Direction</p>
+                    
+                    <div class="flex-example">
+                        
+                        <div class="flex-example-cross-axis" id="flex-direction-left-axis">
+                            <p>Cross Axis ⬆⬇</p>   
+                        </div>
+        
+                        <div class="flex-container" id="flex-direction-container">
+        
+                            <div class="flex-item-normal">1</div>
+                            <div class="flex-item-normal">2</div>
+                            <div class="flex-item-normal">3</div>
+                            
+                        </div>
+
+                        <div class="flex-example-invisible-cross-axis"> <!--This is only here for the sake of centering the graphic, forgive my soul i'm still learning-->  
+                        </div>
+        
+                    </div>
+
+                    <div class="flex-example-main-axis" id="flex-direction-bottom-axis">
+                        <p>Main Axis ⬅ ⮕</p>
+                    </div>
+
+                </div>
+
+                <div class="example-interactions" >
+                    <p>(You can click the buttons to change the property)</p>
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="flex-direction-row-button">row (default)</button>
+                            <button id="flex-direction-row-reverse-button">row-reverse</button>
+                        </div>
+                        <div>
+                            <button id="flex-direction-column-button">column</button>
+                        <button id="flex-direction-column-reverse-button">column-reverse</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-flex-direction">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">flex-direction: <var>row</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+
+                <p>Although you may have already noticed, it's important to mention that by changing the "flex-direction" property to column or column-reverse,
+                    the main axis and the cross axis will switch places, therefore the main axis will go from the top to the bottom, and the cross axis from left to right
+                    (unless it's reversed, of course).
+                </p>
+            </div>
+            <br>
+            <br>
+            
+            <p style=" font-weight:bold">Flex Wrap</p>
+            
+            <p>By default, flex items will try to fit onto one line. You can change that and allow the items to  wrap as needed with the "flex-wrap" property.</p>
+            <p>In this container, each flex item has the same size as in the previous example, however, since all of them are in the same line (or div) inside a
+                flex container, they shrink to fit into the container's size, this happens because the "flex-wrap" default property is "nowrap". As you can see, once
+                we change the flex-wrap property either to "wrap" or "wrap-reverse", the items turn back to their original size and move following the container's direction.
+            </p>
+
+            <div class="example" id="flex-wrap-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Flex Wrap</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" id="flex-wrap-container">
+        
+                            <div class="flex-item-normal">1</div>
+                            <div class="flex-item-normal">2</div>
+                            <div class="flex-item-normal">3</div>
+                            <div class="flex-item-normal">4</div>
+                            <div class="flex-item-normal">5</div>
+                            <div class="flex-item-normal">6</div>
+                            <div class="flex-item-normal">7</div>
+                            <div class="flex-item-normal">8</div>
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="flex-wrap-wrap-button">wrap</button>
+                            <button id="flex-wrap-nowrap-button">nowrap (default)</button>
+                            <button id="flex-wrap-wrap-reverse-button">wrap-reverse</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-flex-wrap">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">flex-wrap: <var>nowrap</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+
+            <p>The flex-wrap properties are:</p>
+            <ul>
+                <li>nowrap (default): all flex items will be on one line</li>
+                <li>wrap: flex items will wrap onto multiple lines, from top to bottom.</li>
+                <li>wrap-reverse: flex items will wrap onto multiple lines from bottom to top.</li>
+            </ul>
+            <br><br>
+
+
+            <p style=" font-weight:bold">Flex Flow</p>
+
+            <p>This is just a shorthand for the previous properties "flex-direction" and "flex-flow", it merges them so you can define both properties at once,
+                instead of doing it separately. Since flex-direction's default value is "row" and flex-wrap's is "nowrap", flex-flow follows the same convention, having 
+                its default value set as "row nowrap".
+            </p>
+
+            <div class="example" id="flex-flow-example">
+
+                <div class="code-container">
+                    <p class="code-comment">/* So instead of doing this */</p>
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.my-container</var> {</p>
+                    <p class="code">flex-direction: <var>column</var>; <span class="code-comment">/* or row/row-reverse/column-reverse */</span></p>
+                    <p class="code">flex-wrap: <var>wrap</var>; <span class="code-comment">/* or wrap-reverse/nowrap */</span></p>
+                    <p class="code">}</p>
+                </div>
+
+                <div class="code-container">
+                    <p class="code-comment">/* You could do this */</p>
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.my-container</var> {</p>
+                    <p class="code">flex-flow: <var>column wrap</var>; <span class="code-comment">/* or whatever combination you want */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p>And that's about it, just a way to do more with less, pretty simple, right?</p>
+            <br><br>
+
+
+            <p style=" font-weight:bold">Justify Content</p>
+
+            <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are 
+                inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
+
+            <div class="example" id="justify-content-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Justify Content</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" style="width: 70%;" id="justify-content-container">
+        
+                            <div class="flex-item-normal-responsive">1</div>
+                            <div class="flex-item-normal-responsive">2</div>
+                            <div class="flex-item-normal-responsive">3</div>
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="justify-content-flex-start-button">flex-start (default)</button>
+                            <button id="justify-content-flex-end-button">flex-end</button>
+                            <button id="justify-content-center-button">center</button>
+                        </div>
+                        <div>
+                            <button id="justify-content-space-between-button">space-between</button>
+                            <button id="justify-content-space-around-button">space-around</button>
+                            <button id="justify-content-space-evenly-button">space-evenly</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-justify-content">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">justify-content: <var>flex-start</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+
+            <p>The justify-content properties are:</p>
+
+            <ul>
+                <li>flex-start (default): items are packed toward the start of the flex-direction.</li>
+                <li>flex-end: items are packed toward the end of the flex-direction.</li>
+                <li>center: items are centered along the line</li>
+                <li>space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line</li>
+                <li>space-around: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren't equal, since all the 
+                    items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the
+                     next item because that next item has its own spacing that applies.</li>
+                <li>space-evenly: items are distributed so that the spacing between any two items (and the space to the edges) is equal.</li>
+            </ul>
+
+            <details>
+                <summary style="font-weight: bold;">Justify Content Extra Notes and Properties</summary>
+                <p>Some other properties for justify-content are:</p>
+                <ul>
+                    <li>start: items are packed toward the start of the writing-mode direction.</li>
+                    <li>end: items are packed toward the end of the writing-mode direction.</li>
+                    <li>left: items are packed toward left edge of the container, unless that doesn't make sense with the flex-direction, then it behaves like start.</li>
+                    <li>right: items are packed toward right edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like end.</li>
+                </ul>
+                <p>Note that that browser support for these values is nuanced. For example, space-between never got support from some versions of Edge, 
+                    and start/end/left/right aren't in Chrome yet. MDN has detailed charts. The safest values are flex-start, flex-end, and center.</p>
+                <p>There are also two additional keywords you can pair with these values: safe and unsafe. Using safe ensures that however you do this type 
+                    of positioning, you can't push an element such that it renders off-screen (e.g. off the top) in such a way the content can't be scrolled too
+                     (called “data loss”).</p>
+            </details>
+            <br><br><br>
+
+
+            <p style=" font-weight:bold">Align Items</p>
+
+            <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version
+                 for the cross-axis (perpendicular to the main-axis).</p>
+            <p>In this case, I've added a red underline so you can spot the baseline easier and find the differences between the "baseline" and "center" properties.</p>
+            <br>
+
+            <div class="example" id="align-items-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Align Items</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" style="height: 200px;" id="align-items-container">
+        
+                            <div class="flex-item-normal" style="height: auto; min-height: 60%; max-height: 100%; ">1</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 75%; max-height: 100%; ">2</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 25%; max-height: 100%; ">3</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 45%; max-height: 100%; ">4</div>
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="align-items-flex-start-button">flex-start</button>
+                            <button id="align-items-flex-end-button">flex-end</button>
+                            <button id="align-items-center-button">center</button>
+                        </div>
+                        <div>
+                            <button id="align-items-stretch-button">stretch (default)</button>
+                            <button id="align-items-baseline-button">baseline</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-align-items">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">align-items: <var>stretch</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+            <br>
+
+            <p>The align-items properties are:</p>
+
+            <ul>
+                <li>stretch (default): stretch to fill the container (still respect min-width/max-width)</li>
+                <li>flex-start / start / self-start: items are placed at the start of the cross axis. The difference
+                     between these is subtle, and is about respecting the flex-direction rules or the writing-mode rules.</li>
+                <li>flex-end / end / self-end: items are placed at the end of the cross axis. The difference again is subtle and
+                     is about respecting flex-direction rules vs. writing-mode rules.</li>
+                <li>center: items are centered in the cross-axis</li>
+                <li>baseline: items are aligned such as their baselines align</li>
+            </ul>
+
+            <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items" style="color: rgb(47, 131, 131)";>browser support</a>), and deal with helping you prevent aligning elements such that the content becomes inaccessible.
+            </p>
+            <br><br>
+
+            
+            <p style=" font-weight:bold">Align Content</p>
+
+            <p>The align-content property aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns 
+                individual items within the main-axis.
+            </p>
+
+            <p><span style="font-weight: bold; color: rgb(182, 46, 46);">Note:</span> This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible
+                 container (i.e. where flex-wrap is set to its default value, no-wrap) will not reflect align-content.
+            </p>
+
+
+                
+            <div class="example" id="align-content-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Align Content</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" style="height: 250px; flex-wrap: wrap; align-content: flex-start;" id="align-content-container">
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 25%;">1</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 48%;">2</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 20%;">3</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 15%;">4</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 15%;">5</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 45%;">6</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 15%">7</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 25%;">8</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 20%; max-height: 33%; width: 25%;">9</div>
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="align-content-flex-start-button">flex-start</button>
+                            <button id="align-content-flex-end-button">flex-end</button>
+                            <button id="align-content-center-button">center</button>
+                        </div>
+                        <div>
+                            <button id="align-content-stretch-button">stretch</button>
+                            <button id="align-content-space-between-button">space-between</button>
+                            <button id="align-content-space-around-button">space-around</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-align-content">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">flex-wrap: <var>wrap</var>;</p>
+                        <p class="code">align-content: <var>flex-start</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+            <br>
+
+            <p>The align-content properties are:</p>
+
+            <ul>
+                <li>normal (default): items are packed in their default position as if no value was set.</li>
+                <li>flex-start / start: items packed to the start of the container. The (more supported) flex-start 
+                    honors the flex-direction while start honors the writing-mode direction.</li>
+                <li>flex-end / end: items packed to the end of the container. The (more support) flex-end honors the flex-direction while end honors the writing-mode
+                     direction.</li>
+                <li>center: items centered in the container</li>
+                <li>space-between: items evenly distributed; the first line is at the start of the container while the last one is at the end</li>
+                <li>space-around: items evenly distributed with equal space around each line</li>
+                <li>space-evenly: items are evenly distributed with equal space around them</li>
+                <li>stretch: lines stretch to take up the remaining space</li>
+            </ul>
+
+            <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note browser support), and deal with 
+                helping you prevent aligning elements such that the content becomes inaccessible.</p>
+            <br><br>
+
+            <p style=" font-weight:bold">Gap, Row Gap and Column Gap</p>
+
+            <p>The gap property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</p>
+            <p>There are many ways in which you can define the gap properties:</p>
+        
+
+            <div class="example" id="gap-example">
+
+                <div class="code-container">
+                    <p class="code-comment">/* gap */</p>
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.my-container</var> {</p>
+                    <p class="code">gap: <var>10px</var>; <span class="code-comment">/* When written like this, you are defining both the row and column gap */</span></p>
+                    <p class="code">gap: <var>10px 20px</var>; <span class="code-comment">/* Or you can define them separately, the first value for the row and the second for the column */</span></p>
+                    <p class="code">}</p>
+                </div>
+
+                <div class="code-container">
+                    <p class="code-comment">/* row-gap, column-gap */</p>
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.my-container</var> {</p>
+                    <p class="code">row-gap: <var>10px</var>; <span class="code-comment">/* You can also define the properties like this */</span></p>
+                    <p class="code">column-gap: <var>20px</var>; <span class="code-comment">/* in case you prefer being more specific */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p>And here we see a container with some flex items, you can try increasing/decreasing the gaps to see how they look.</p>
+
+
+            <div class="example" id="gap-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Gap, Row Gap and Column Gap</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" style="flex-wrap: wrap; gap: 1px 2px;" id="gap-container">
+                            <div class="flex-item-double">1</div>
+                            <div class="flex-item-normal">2</div>
+                            <div class="flex-item-double">3</div>
+                            <div class="flex-item-double">4</div>
+                            <div class="flex-item-normal">5</div>
+                            <div class="flex-item-double">6</div>
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons" style="display: flex; justify-content: space-evenly;">
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <p>row-gap:</p>
+                            <button id="row-gap-minus-button" style="margin-left: 15px;">-</button>
+                            <button id="row-gap-plus-button">+</button>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <p style="width: 40%;">column-gap:</p>
+                            <button id="column-gap-minus-button" style="margin-left: 15px;">-</button>
+                            <button id="column-gap-plus-button">+</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-align-content">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">row-gap: <var id="gap-row-var1">2</var>px;</p>
+                        <p class="code">column-gap: <var id="gap-col-var1">2</var>px;</p>
+                        <p class="code"><span class="code-comment">/* Or */</span></p>
+                        <p class="code">gap: <var id="gap-row-var2">2</var>px <var id="gap-col-var2">2</var>px;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+
+            <p>The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of something like justify-content: space-between;) 
+                then the gap will only take effect if that space would end up smaller.
+
+                It is not exclusively for flexbox, gap works in grid and multi-column layout as well.
+            </p>
+
+            <p>And that pretty much sums up the basics of what you should know about flex containers. There are, however, some other properties that you should know
+                about, and these are the ones meant for the children or flex items, let's get into them.
+            </p>
+            <br><br><br>
+
+            <h1 style="text-align: center; font-size: 200%;">Properties for the Children (flex items)</h1>
+            <br><br><br>
+        </article>
+    </main>
+</body>
+
+<script src="./script.js"></script>
+</html>
