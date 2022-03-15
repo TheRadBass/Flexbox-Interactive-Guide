@@ -4,7 +4,7 @@ This flexbox guide is inspired on the [CSS's Tricks's Complete Guide to Flexbox]
 
 ## Approach
 
-The guide follows very closely what's covered in the CSS Tricks's guide, showing the theory first, and then some interactive examples to give deeper visual aid in hopes of achieving a better understanding of the Flexbox module.
+The guide follows very closely what's covered in the CSS Tricks's guide, showing the theory first, and then some interactive examples to give deeper visual aid, in hope of achieving a better understanding of the Flexbox module.
 
 
 ## Do you see something that could be improved?
