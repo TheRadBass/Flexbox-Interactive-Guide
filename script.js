@@ -47,29 +47,29 @@ const gapColVar2 = document.getElementById('gap-col-var2');
 directionRowButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row';
     codeContainerFlexDirection.children[2].innerHTML = '<p class="code">flex-direction: <var>row</var>;</p>';
-    flexDirectionLeftAxis.children[0].innerText = "Cross Axis ⬆⬇";
-    flexDirectionBottomAxis.children[0].innerText =  "Main Axis ⬅ ⮕";
+    flexDirectionLeftAxis.children[0].innerText = "Cross Axis ↕";
+    flexDirectionBottomAxis.children[0].innerText =  "Main Axis ↔";
 }
 
 directionRowReverseButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row-reverse';
     codeContainerFlexDirection.children[2].innerHTML = '<p class="code">flex-direction: <var>row-reverse</var>;</p>';
-    flexDirectionLeftAxis.children[0].innerText = "Cross Axis ⬆⬇";
-    flexDirectionBottomAxis.children[0].innerText =  "Main Axis ⬅ ⮕";
+    flexDirectionLeftAxis.children[0].innerText = "Cross Axis ↕";
+    flexDirectionBottomAxis.children[0].innerText =  "Main Axis ↔";
 }
 
 directionColumnButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'column';
     codeContainerFlexDirection.children[2].innerHTML = '<p class="code">flex-direction: <var>column</var>;</p>';
-    flexDirectionLeftAxis.children[0].innerText = "Main Axis ⬆⬇";
-    flexDirectionBottomAxis.children[0].innerText = "Cross Axis ⬅ ⮕";
+    flexDirectionLeftAxis.children[0].innerText = "Main Axis ↕";
+    flexDirectionBottomAxis.children[0].innerText = "Cross Axis ↔";
 }
 
 directionColumnReverseButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'column-reverse';
     codeContainerFlexDirection.children[2].innerHTML = '<p class="code">flex-direction: <var>column-reverse</var>;</p>';
-    flexDirectionLeftAxis.children[0].innerText = "Main Axis ⬆⬇";
-    flexDirectionBottomAxis.children[0].innerText = "Cross Axis ⬅ ⮕";
+    flexDirectionLeftAxis.children[0].innerText = "Main Axis ↕";
+    flexDirectionBottomAxis.children[0].innerText = "Cross Axis ↔";
 }
 
 flexWrapWrapButton.onclick = function() {
