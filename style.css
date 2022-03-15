@@ -225,6 +225,21 @@ button:active {
     flex-shrink: 1;
 }
 
+.flex-item-normal-dude {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 1%;
+    flex-shrink: 1;
+    box-shadow: inset 10px 10px rgb(17, 126, 41);
+    background-color:rgb(14, 99, 32);
+    color: white;
+}
+
 .flex-item-normal-responsive {
     text-align: center;
     display: flex;

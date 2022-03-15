@@ -599,6 +599,88 @@
 
             <h1 style="text-align: center; font-size: 200%;">Properties for the Children (flex items)</h1>
             <br><br><br>
+
+            <p>The following properties belong to the flex items, which means that they will apply to the children, and not to the parent/flex container.</p>
+            <br><br>
+
+            <p style=" font-weight:bold">Order</p>
+
+            <p>By default, flex items are laid out in the source order. However, the order property controls the order in which they 
+                appear in the flex container.
+            </p>
+
+            <p>For this example, I have created a container with 4 flex items inside of it. There are 3 common items and another one that has
+                been colored green to make it easier to spot and use as an example. Each flex item has its "order" value set as 0, which is the 
+                default value, therefore, the items will be placed as defined inside the container.
+            </p>
+
+            <div class="example">
+
+                <div class="code-container">
+                    <p class="code-comment">&lt;!-- html --&gt;</p>
+                    <p class="code">&lt;div <span class="code-class">class=</span><span class="code-string">"my-container"</span>&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>1</var>&lt;/div&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div <span class="code-class">id=</span><span class="code-string">"the-dude"</span>&gt;<var>The dude</var>&lt;/div&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>3</var>&lt;/div&gt;</p>
+                    <p class="code">ㅤㅤ&lt;div&gt;<var>3</var>&lt;/div&gt;</p>
+                    <p class="code">&lt;/div&gt;</p>             
+                </div>
+
+
+                <div class="code-container">
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>#the-dude</var> {</p>
+                    <p class="code">order: <var>0</var>; <span class="code-comment">/* The default value is always 0 for the order property */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p>But what happens if we change the green item's order property?</p>
+
+            <div class="example" id="order-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Order</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" id="order-container">
+                            <div class="flex-item-normal">1</div>
+                            <div class="flex-item-normal-dude" id="order-dude">The dude</div>
+                            <div class="flex-item-normal">3</div>
+                            <div class="flex-item-normal">4</div>
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="order-zero-button">order: 0</button>
+                        </div>
+                        <div>
+                            <button id="order-one-button">order: 1</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-order">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>#the-dude</var> {</p>
+                        <p class="code">order: <var>0</var></p>
+                        <p class="code">}</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>In this case, since the rest of the items have their order value set as 0 by default, the green item gets placed
+                last in the container, because its value is bigger than the rest. When we select the "0" value, the green item gets
+                back to its place since items with the same order value revert to their source order.
+            </p>
+
         </article>
     </main>
 </body>

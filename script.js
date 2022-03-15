@@ -43,6 +43,10 @@ const gapRowVar1 = document.getElementById('gap-row-var1');
 const gapRowVar2 = document.getElementById('gap-row-var2');
 const gapColVar1 = document.getElementById('gap-col-var1');
 const gapColVar2 = document.getElementById('gap-col-var2');
+const orderDude = document.getElementById('order-dude');
+const orderZeroButton = document.getElementById('order-zero-button');
+const orderOneButton = document.getElementById('order-one-button');
+const codeContainerOrder = document.getElementById('code-container-order');
 
 directionRowButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row';
@@ -276,3 +280,12 @@ columnGapMinusButton.onclick = function(){
     decreaseColumnGap();
 }
 
+orderZeroButton.onclick = function() {
+    orderDude.style.order = '0';
+    codeContainerOrder.children[2].innerHTML = "order: <var>0</var>";
+}
+
+orderOneButton.onclick = function() {
+    orderDude.style.order = '1';
+    codeContainerOrder.children[2].innerHTML = "order: <var>1</var>";
+}
