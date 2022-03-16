@@ -47,6 +47,10 @@ const orderDude = document.getElementById('order-dude');
 const orderZeroButton = document.getElementById('order-zero-button');
 const orderOneButton = document.getElementById('order-one-button');
 const codeContainerOrder = document.getElementById('code-container-order');
+const flexGrowDude = document.getElementById('flex-grow-dude');
+const flexGrowMinusButton = document.getElementById('flex-grow-minus-button');
+const flexGrowPlusButton = document.getElementById('flex-grow-plus-button');
+const flexGrowVar = document.getElementById('flex-grow-var');
 
 directionRowButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row';
@@ -282,10 +286,48 @@ columnGapMinusButton.onclick = function(){
 
 orderZeroButton.onclick = function() {
     orderDude.style.order = '0';
-    codeContainerOrder.children[2].innerHTML = "order: <var>0</var>";
+    codeContainerOrder.children[2].innerHTML = "order: <var>0</var>;";
 }
 
 orderOneButton.onclick = function() {
     orderDude.style.order = '1';
-    codeContainerOrder.children[2].innerHTML = "order: <var>1</var>";
+    codeContainerOrder.children[2].innerHTML = "order: <var>1</var>;";
+}
+
+let currentFlexGrowValue = parseInt(flexGrowVar.innerText);
+
+function increaseFlexGrow(flexItem) {
+    currentFlexGrowValue += 1;
+    flexGrowVar.innerText = currentFlexGrowValue;
+    flexItem.style.flexGrow = currentFlexGrowValue + "";
+    if (currentFlexGrowValue >= 5){
+        flexGrowPlusButton.disabled = true;
+        flexGrowPlusButton.style.backgroundColor = 'red';
+    }
+    if (currentFlexGrowValue > 0){
+        flexGrowMinusButton.disabled = false;
+        flexGrowMinusButton.style.backgroundColor = 'black';
+    }
+}
+
+function decreaseFlexGrow(flexItem) {
+    currentFlexGrowValue -= 1;
+    flexGrowVar.innerText = currentFlexGrowValue;
+    flexItem.style.flexGrow = currentFlexGrowValue + "";
+    if (currentFlexGrowValue < 1){
+        flexGrowMinusButton.disabled = true;
+        flexGrowMinusButton.style.backgroundColor = 'red';
+    }
+    if (currentFlexGrowValue < 5){
+        flexGrowPlusButton.disabled = false;
+        flexGrowPlusButton.style.backgroundColor = 'black';
+    }
+}
+
+flexGrowPlusButton.onclick = function(){
+    increaseFlexGrow(flexGrowDude);
+}
+
+flexGrowMinusButton.onclick = function(){
+    decreaseFlexGrow(flexGrowDude);
 }

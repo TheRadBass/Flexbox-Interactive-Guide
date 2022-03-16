@@ -22,6 +22,10 @@ p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.text {
+    text-align: justify;
+}
+
 ul {
     font-size: large;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -279,6 +283,7 @@ button:active {
     width: 400px;
     padding: 0.1%;
     padding-left: 2%;
+    padding-right: 2%;
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;

@@ -29,13 +29,13 @@
 
         <article>
 
-            <p>Flexbox is a flexible box layout. It gives us the power to create responsive layouts that can automatically arrange depending on the screen size.</p>
-            <p>It is based on a model that follows two directions, the main axis, that goes from the left to right, and the cross axis that goes from the top to the bottom.</p>
+            <p class="text">Flexbox is a flexible box layout. It gives us the power to create responsive layouts that can automatically arrange depending on the screen size.</p>
+            <p class="text">It is based on a model that follows two directions, the main axis, that goes from the left to right, and the cross axis that goes from the top to the bottom.</p>
             <br>
 
            <details>
-            <p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).</p>
-            <p>If “regular” layout is based on both block and inline flow directions, the flex layout is based on “flex-flow directions”. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>
+            <p class="text">Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).</p>
+            <p class="text">If “regular” layout is based on both block and inline flow directions, the flex layout is based on “flex-flow directions”. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>
             
                <summary style="font-weight: bold; font-size: large;">Flexbox Basic Axis Information</summary>
                <div class="example">
@@ -50,7 +50,7 @@
             <br>
             <h1 style="text-align: center; font-size: 200%;">Properties for the Parent (flex container)</h1>
             <p style=" font-weight:bold">Example:</p>
-            <p>Here we see a flex container with 3 items inside of it.</p>
+            <p class="text">Here we see a flex container with 3 items inside of it.</p>
 
             <div class="example" id="flex-container-example">
 
@@ -91,7 +91,7 @@
             </div>
             <br>
 
-            <p>In order to define a flex container, we just need to add the property of "display: flex;" to the target's CSS:</p>
+            <p class="text">In order to define a flex container, we just need to add the property of "display: flex;" to the target's CSS:</p>
 
             <div class="example">
 
@@ -113,11 +113,11 @@
                 </div>
             </div>
 
-            <p>And just like that, we have a flex container, which will inherit flex context for all of its direct children. </p>
+            <p class="text">And just like that, we have a flex container, which will inherit flex context for all of its direct children. </p>
             <br><br>
 
             <p style=" font-weight:bold">Flex Direction</p>
-            <p>By default, whenever we define a flex container its direction will be set to "row", which has its main axis fit the items from left to right, and its cross axis from the top to the bottom. 
+            <p class="text">By default, whenever we define a flex container its direction will be set to "row", which has its main axis fit the items from left to right, and its cross axis from the top to the bottom. 
                 However, we can change that with the "flex-direction" property:
             </p>
 
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="example-interactions" >
-                    <p>(You can click the buttons to change the property)</p>
+                    <p class="text">(You can click the buttons to change the property)</p>
 
                     <div class="example-buttons">
                         <div>
@@ -175,7 +175,7 @@
     
                 </div>
 
-                <p>Although you may have already noticed, it's important to mention that by changing the "flex-direction" property to column or column-reverse,
+                <p class="text">Although you may have already noticed, it's important to mention that by changing the "flex-direction" property to column or column-reverse,
                     the main axis and the cross axis will switch places, therefore the main axis will go from the top to the bottom, and the cross axis from left to right
                     (unless it's reversed, of course).
                 </p>
@@ -185,8 +185,8 @@
             
             <p style=" font-weight:bold">Flex Wrap</p>
             
-            <p>By default, flex items will try to fit onto one line. You can change that and allow the items to  wrap as needed with the "flex-wrap" property.</p>
-            <p>In this container, each flex item has the same size as in the previous example, however, since all of them are in the same line (or div) inside a
+            <p class="text">By default, flex items will try to fit onto one line. You can change that and allow the items to  wrap as needed with the "flex-wrap" property.</p>
+            <p class="text">In this container, each flex item has the same size as in the previous example, however, since all of them are in the same line (or div) inside a
                 flex container, they shrink to fit into the container's size, this happens because the "flex-wrap" default property is "nowrap". As you can see, once
                 we change the flex-wrap property either to "wrap" or "wrap-reverse", the items turn back to their original size and move following the container's direction.
             </p>
@@ -246,7 +246,7 @@
 
             <p style=" font-weight:bold">Flex Flow</p>
 
-            <p>This is just a shorthand for the previous properties "flex-direction" and "flex-flow", it merges them so you can define both properties at once,
+            <p class="text">This is just a shorthand for the previous properties "flex-direction" and "flex-flow", it merges them so you can define both properties at once,
                 instead of doing it separately. Since flex-direction's default value is "row" and flex-wrap's is "nowrap", flex-flow follows the same convention, having 
                 its default value set as "row nowrap".
             </p>
@@ -271,13 +271,13 @@
                 </div>
             </div>
 
-            <p>And that's about it, just a way to do more with less, pretty simple, right?</p>
+            <p class="text">And that's about it, just a way to do more with less, pretty simple, right?</p>
             <br><br>
 
 
             <p style=" font-weight:bold">Justify Content</p>
 
-            <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are 
+            <p class="text">This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are 
                 inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
 
             <div class="example" id="justify-content-example">
@@ -346,9 +346,9 @@
                     <li>left: items are packed toward left edge of the container, unless that doesn't make sense with the flex-direction, then it behaves like start.</li>
                     <li>right: items are packed toward right edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like end.</li>
                 </ul>
-                <p>Note that that browser support for these values is nuanced. For example, space-between never got support from some versions of Edge, 
+                <p class="text">Note that that browser support for these values is nuanced. For example, space-between never got support from some versions of Edge, 
                     and start/end/left/right aren't in Chrome yet. MDN has detailed charts. The safest values are flex-start, flex-end, and center.</p>
-                <p>There are also two additional keywords you can pair with these values: safe and unsafe. Using safe ensures that however you do this type 
+                <p class="text">There are also two additional keywords you can pair with these values: safe and unsafe. Using safe ensures that however you do this type 
                     of positioning, you can't push an element such that it renders off-screen (e.g. off the top) in such a way the content can't be scrolled too
                      (called “data loss”).</p>
             </details>
@@ -357,9 +357,9 @@
 
             <p style=" font-weight:bold">Align Items</p>
 
-            <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version
+            <p class="text">This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version
                  for the cross-axis (perpendicular to the main-axis).</p>
-            <p>In this case, I've added a red underline so you can spot the baseline easier and find the differences between the "baseline" and "center" properties.</p>
+            <p class="text">In this case, I've added a red underline so you can spot the baseline easier and find the differences between the "baseline" and "center" properties.</p>
             <br>
 
             <div class="example" id="align-items-example">
@@ -419,7 +419,7 @@
                 <li>baseline: items are aligned such as their baselines align</li>
             </ul>
 
-            <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note
+            <p class="text">The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note
                 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items" style="color: rgb(47, 131, 131)";>browser support</a>), and deal with helping you prevent aligning elements such that the content becomes inaccessible.
             </p>
             <br><br>
@@ -427,11 +427,11 @@
             
             <p style=" font-weight:bold">Align Content</p>
 
-            <p>The align-content property aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns 
+            <p class="text">The align-content property aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns 
                 individual items within the main-axis.
             </p>
 
-            <p><span style="font-weight: bold; color: rgb(182, 46, 46);">Note:</span> This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible
+            <p class="text"><span style="font-weight: bold; color: rgb(182, 46, 46);">Note:</span> This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible
                  container (i.e. where flex-wrap is set to its default value, no-wrap) will not reflect align-content.
             </p>
 
@@ -503,14 +503,14 @@
                 <li>stretch: lines stretch to take up the remaining space</li>
             </ul>
 
-            <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note browser support), and deal with 
+            <p class="text">The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note browser support), and deal with 
                 helping you prevent aligning elements such that the content becomes inaccessible.</p>
             <br><br>
 
             <p style=" font-weight:bold">Gap, Row Gap and Column Gap</p>
 
-            <p>The gap property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</p>
-            <p>There are many ways in which you can define the gap properties:</p>
+            <p class="text">The gap property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</p>
+            <p class="text">There are many ways in which you can define the gap properties:</p>
         
 
             <div class="example" id="gap-example">
@@ -534,7 +534,7 @@
                 </div>
             </div>
 
-            <p>And here we see a container with some flex items, you can try increasing/decreasing the gaps to see how they look.</p>
+            <p class="text">And here we see a container with some flex items, you can try increasing/decreasing the gaps to see how they look.</p>
 
 
             <div class="example" id="gap-example">
@@ -586,13 +586,13 @@
                 </div>
             </div>
 
-            <p>The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of something like justify-content: space-between;) 
+            <p class="text">The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of something like justify-content: space-between;) 
                 then the gap will only take effect if that space would end up smaller.
 
                 It is not exclusively for flexbox, gap works in grid and multi-column layout as well.
             </p>
 
-            <p>And that pretty much sums up the basics of what you should know about flex containers. There are, however, some other properties that you should know
+            <p class="text">And that pretty much sums up the basics of what you should know about flex containers. There are, however, some other properties that you should know
                 about, and these are the ones meant for the children or flex items, let's get into them.
             </p>
             <br><br><br>
@@ -600,16 +600,16 @@
             <h1 style="text-align: center; font-size: 200%;">Properties for the Children (flex items)</h1>
             <br><br><br>
 
-            <p>The following properties belong to the flex items, which means that they will apply to the children, and not to the parent/flex container.</p>
+            <p class="text">The following properties belong to the flex items, which means that they will apply to the children, and not to the parent/flex container.</p>
             <br><br>
 
             <p style=" font-weight:bold">Order</p>
 
-            <p>By default, flex items are laid out in the source order. However, the order property controls the order in which they 
+            <p class="text">By default, flex items are laid out in the source order. However, the order property controls the order in which they 
                 appear in the flex container.
             </p>
 
-            <p>For this example, I have created a container with 4 flex items inside of it. There are 3 common items and another one that has
+            <p class="text">For this example, I have created a container with 4 flex items inside of it. There are 3 common items and another one that has
                 been colored green to make it easier to spot, I've called it "the dude". Each flex item has its "order" value set as 0, which is the 
                 default value, therefore, the items will be placed as defined inside the container.
             </p>
@@ -635,7 +635,7 @@
                 </div>
             </div>
 
-            <p>But what happens if we change the dude's order property?</p>
+            <p class="text">But what happens if we change the dude's order property?</p>
 
             <div class="example" id="order-example">
 
@@ -670,16 +670,70 @@
                     <div class="code-container" id="code-container-order">
                         <p class="code-comment">/* CSS */</p>
                         <p class="code"><var>#the-dude</var> {</p>
-                        <p class="code">order: <var>0</var></p>
+                        <p class="code">order: <var>0</var>;</p>
                         <p class="code">}</p>
                     </div>
                 </div>
             </div>
 
-            <p>In this case, since the rest of the items have their order value set as 0 by default, the dude gets placed
+            <p class="text">In this case, since the rest of the items have their order value set as 0 by default, the dude gets placed
                 last in the container, because its value is bigger than the rest. When we select the "0" value, it gets
                 back to its place since items with the same order value revert to their source order.
             </p>
+            <br><br><br>
+
+
+            <p style=" font-weight:bold">Flex Grow</p>
+
+
+            <div class="example" id="flex-grow-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Flex Grow</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" id="flex-grow-container">
+                            <div class="flex-item-normal" style="width: auto; flex-grow: 1;">1</div>
+                            <div class="flex-item-normal-dude" style="width: auto; flex-grow: 1" id="flex-grow-dude">2</div>
+                            <div class="flex-item-normal" style="width: auto; flex-grow: 1">3</div>
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="flex-grow-minus-button">Flex grow -</button>
+                        </div>
+                        <div>
+                            <button id="flex-grow-plus-button">Flex grow +</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-order">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>#the-dude</var> {</p>
+                        <p class="code">width: <var>auto</var>;</p>
+                        <p class="code">flex-grow: <var id="flex-grow-var">1</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. 
+                It dictates what amount of the available space inside the flex container the item should take up.
+            </p>
+
+            <p class="text">If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. 
+                If one of the children has a value of 2, that child would take up twice as much of the space either one of the others 
+                (or it will try, at least).
+            </p>
+
 
         </article>
     </main>
