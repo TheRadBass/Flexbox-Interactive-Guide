@@ -51,6 +51,11 @@ const flexGrowDude = document.getElementById('flex-grow-dude');
 const flexGrowMinusButton = document.getElementById('flex-grow-minus-button');
 const flexGrowPlusButton = document.getElementById('flex-grow-plus-button');
 const flexGrowVar = document.getElementById('flex-grow-var');
+const flexShrinkContainer = document.getElementById('flex-shrink-container');
+const flexShrink20Button = document.getElementById('flex-shrink-20-button');
+const flexShrink40Button = document.getElementById('flex-shrink-40-button');
+const flexShrink60Button = document.getElementById('flex-shrink-60-button');
+const flexShrink80Button = document.getElementById('flex-shrink-80-button');
 
 directionRowButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row';
@@ -330,4 +335,20 @@ flexGrowPlusButton.onclick = function(){
 
 flexGrowMinusButton.onclick = function(){
     decreaseFlexGrow(flexGrowDude);
+}
+
+flexShrink20Button.onclick = function(){
+    flexShrinkContainer.style.width = '20%';
+}
+
+flexShrink40Button.onclick = function(){
+    flexShrinkContainer.style.width = '40%';
+}
+
+flexShrink60Button.onclick = function(){
+    flexShrinkContainer.style.width = '60%';
+}
+
+flexShrink80Button.onclick = function(){
+    flexShrinkContainer.style.width = '80%';
 }

@@ -685,6 +685,15 @@
 
             <p style=" font-weight:bold">Flex Grow</p>
 
+            <p class="text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. 
+                It dictates what amount of the available space inside the flex container the item should take up.
+            </p>
+
+            <p class="text">If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. 
+                If one of the children has a value of 2, that child would take up twice as much of the space either one of the others 
+                (or it will try, at least).
+            </p>
+
 
             <div class="example" id="flex-grow-example">
 
@@ -715,7 +724,7 @@
                         </div>
                     </div>
     
-                    <div class="code-container" id="code-container-order">
+                    <div class="code-container" id="code-container-flex-grow">
                         <p class="code-comment">/* CSS */</p>
                         <p class="code"><var>#the-dude</var> {</p>
                         <p class="code">width: <var>auto</var>;</p>
@@ -725,16 +734,72 @@
                 </div>
             </div>
 
-            <p class="text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. 
-                It dictates what amount of the available space inside the flex container the item should take up.
+            <p class="text"><span style="font-weight: bold; color: rgb(182, 46, 46);">Note:</span> Negative numbers are invalid.</p>
+            <br><br><br>
+
+            <p style=" font-weight:bold">Flex Shrink</p>
+
+            <p class="text">This defines the ability for a flex item to shrink if necessary.</p>
+            <p class="text">In this case you can see that each item has a width of 200px (set with flex basis), and when we modify the 
+                container's width, the item with the most flex-shrink (The green item, the dude) is the one that shrinks the most.
+                You can modify the container's width with the buttons over the code container.
             </p>
 
-            <p class="text">If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. 
-                If one of the children has a value of 2, that child would take up twice as much of the space either one of the others 
-                (or it will try, at least).
-            </p>
+            <p class="text">Negative numbers are also invalid with this one.</p>
+
+            <div class="example" id="flex-shrink-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Flex Shrink</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" id="flex-shrink-container">
+                            <div class="flex-shrink-item">1</div>
+                            <div class="flex-shrink-item" style="background-color:rgb(14, 99, 32);
+                            box-shadow: inset 10px 10px rgb(17, 126, 41); flex-shrink: 2;">2</div>
+                            <div class="flex-shrink-item">3</div>
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="flex-shrink-20-button">20%</button>
+                            <button id="flex-shrink-60-button">60%</button>
+                        </div>
+                        <div>
+                            <button id="flex-shrink-40-button">40%</button>
+                            <button id="flex-shrink-80-button">80%</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-flex-shrink">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>#The-dude</var> {</p>
+                        <p class="code">flex-basis: <var>200px</var>;</p>
+                        <p class="code">flex-shrink: <var>2</var>;</p>
+                        <p class="code">}</p>
+                        <p class="code"><var>.normal-flex-item</var> {</p>
+                        <p class="code">flex-basis: <var>200px</var>;</p>
+                        <p class="code">flex-shrink: <var>1</var>;</p>
+                        <p class="code">}</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <p class="text">But, what is flex basis?</p>
+            <br><br><br>
 
 
+            <p style=" font-weight:bold">Flex Basis</p>
+            
         </article>
     </main>
 </body>

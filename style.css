@@ -215,6 +215,10 @@ button:active {
     height: fit-content;
 }
 
+#flex-shrink-container {
+    width: 80%;
+}
+
 .flex-item-normal {
     text-align: center;
     display: flex;
@@ -271,6 +275,20 @@ button:active {
     box-shadow: inset 10px 10px orange;
     flex-shrink: 2;
 }
+
+.flex-shrink-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(255, 145, 0);
+    height: 50px;
+    border-radius: 5px;
+    margin: 1%;
+    box-shadow: inset 10px 10px orange;
+    flex-basis: 200px;
+    flex-shrink: 1;
+};
 
 .arrow-down {
     width: 30px;
@@ -341,7 +359,6 @@ var {
     .flex-container {
         padding: 1%;
         padding-bottom: 2%;
-        flex-grow: 1;
     }
 
     .flex-example-cross-axis {
@@ -422,4 +439,11 @@ var {
         font-size: small;
     }
 
+    #flex-shrink-container {
+        width: 80%;
+    }
+
+    .flex-shrink-item {
+        flex-basis: 70px;
+    };
 }
