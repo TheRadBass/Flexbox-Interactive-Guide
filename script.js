@@ -56,6 +56,13 @@ const flexShrink20Button = document.getElementById('flex-shrink-20-button');
 const flexShrink40Button = document.getElementById('flex-shrink-40-button');
 const flexShrink60Button = document.getElementById('flex-shrink-60-button');
 const flexShrink80Button = document.getElementById('flex-shrink-80-button');
+const alignSelfDude = document.getElementById('align-self-dude');
+const alignSelfFlexStartButton = document.getElementById('align-self-flex-start-button');
+const alignSelfFlexEndButton = document.getElementById('align-self-flex-end-button');
+const alignSelfCenterButton = document.getElementById('align-self-center-button');
+const alignSelfStretchButton = document.getElementById('align-self-stretch-button');
+const alignSelfBaselineButton = document.getElementById('align-self-baseline-button');
+const codeContainerAlignSelf = document.getElementById('code-container-align-self');
 
 directionRowButton.onclick = function() {
     flexDirectionContainer.style.flexDirection = 'row';
@@ -351,4 +358,29 @@ flexShrink60Button.onclick = function(){
 
 flexShrink80Button.onclick = function(){
     flexShrinkContainer.style.width = '80%';
+}
+
+alignSelfFlexStartButton.onclick = function(){
+    alignSelfDude.style.alignSelf = 'flex-start';
+    codeContainerAlignSelf.children[5].innerHTML = "align-self: <var>flex-start</var>;";
+}
+
+alignSelfFlexEndButton.onclick = function(){
+    alignSelfDude.style.alignSelf = 'flex-end';
+    codeContainerAlignSelf.children[5].innerHTML = "align-self: <var>flex-end</var>;";
+}
+
+alignSelfCenterButton.onclick = function(){
+    alignSelfDude.style.alignSelf = 'center';
+    codeContainerAlignSelf.children[5].innerHTML = "align-self: <var>center</var>;";
+}
+
+alignSelfStretchButton.onclick = function(){
+    alignSelfDude.style.alignSelf = 'stretch';
+    codeContainerAlignSelf.children[5].innerHTML = "align-self: <var>stretch</var>;";
+}
+
+alignSelfBaselineButton.onclick = function(){
+    alignSelfDude.style.alignSelf = 'baseline';
+    codeContainerAlignSelf.children[5].innerHTML = "align-self: <var>baseline</var>;";
 }

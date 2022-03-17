@@ -757,7 +757,7 @@
         
                         <div class="flex-container" id="flex-shrink-container">
                             <div class="flex-shrink-item">1</div>
-                            <div class="flex-shrink-item" style="background-color:rgb(14, 99, 32);
+                            <div class="flex-shrink-item" style="color: white; background-color:rgb(14, 99, 32);
                             box-shadow: inset 10px 10px rgb(17, 126, 41); flex-shrink: 2;">2</div>
                             <div class="flex-shrink-item">3</div>
                         </div>
@@ -799,9 +799,130 @@
 
 
             <p style=" font-weight:bold">Flex Basis</p>
-            
+
+            <p class="text">This defines the default size of an element before the remaining space is distributed. It can be a length
+                 (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means “look at my width or height property” (which was temporarily 
+                 done by the main-size keyword until deprecated). The content keyword means “size it based on the item’s content” – this keyword
+                  isn’t well supported yet, so it’s hard to test and harder to know what its brethren max-content, min-content, and fit-content do.
+            </p>
+            <br>
+            <div class="example">
+
+                <div class="code-container" id="code-container-flex-basis">
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.flex-item</var> {</p>
+                    <p class="code">flex-basis: <var>| auto</var>; <span class="code-comment">/* default auto */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p class="text">If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based 
+                on its flex-grow value. <a href="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg" style="color: rgb(47, 131, 131)">See this graphic.</a>
+            </p>
+            <br><br><br>
+
+
+            <p style=" font-weight:bold">Flex</p>
+
+            <p class="text">
+                This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink 
+                and flex-basis) are optional. The default is 0 1 auto, but if you set it with a single number value, like flex: 5;, that 
+                changes the flex-basis to 0%, so it’s like setting flex-grow: 5; flex-shrink: 1; flex-basis: 0%;.
+            </p>
+            <br><br>
+
+            <div class="example">
+
+                <div class="code-container" id="code-container-flex-basis">
+                    <p class="code-comment">/* CSS */</p>
+                    <p class="code"><var>.flex-item</var> {</p>
+                    <p class="code">flex: <var>0 1 auto</var>; <span class="code-comment">/* default values for flex-grow, flex-shrink and 
+                        flex-basis */</span></p>
+                    <p class="code">}</p>
+                </div>
+            </div>
+
+            <p class="text">It is recommended that you use this shorthand property rather than set the individual properties. The shorthand sets 
+                the other values intelligently.
+            </p>
+            <br><br><br>
+
+            <p style=" font-weight:bold">Align Self</p>
+
+            <p class="text">This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.</p>
+            <p class="text">Please see the align-items explanation to understand the available values.</p>
+            <br><br>
+
+
+            <div class="example" id="align-self-example">
+
+                <div class="example-graphic-container">
+
+                    <p class="example-title">Align Self</p>
+                    
+                    <div class="flex-example">
+        
+                        <div class="flex-container" style="height: 200px; width: 60%; align-items: center; justify-content: space-evenly;" id="align-self-container">
+        
+                            <div class="flex-item-normal" style="height: auto; min-height: 60%; max-height: 100%; ">1</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 75%; max-height: 100%; ">2</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 25%; max-height: 100%; ">3</div>
+                            <div class="flex-item-normal" style="height: auto; min-height: 45%; max-height: 100%; ">4</div>
+                            <div class="flex-item-normal-dude" id="align-self-dude" style="height: auto; min-height: 25%; max-height: 100%;">5</div>
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="example-interactions" >
+
+                    <div class="example-buttons">
+                        <div>
+                            <button id="align-self-flex-start-button">flex-start</button>
+                            <button id="align-self-flex-end-button">flex-end</button>
+                            <button id="align-self-center-button">center</button>
+                        </div>
+                        <div>
+                            <button id="align-self-stretch-button">stretch (default)</button>
+                            <button id="align-self-baseline-button">baseline</button>
+                        </div>
+                    </div>
+    
+                    <div class="code-container" id="code-container-align-self">
+                        <p class="code-comment">/* CSS */</p>
+                        <p class="code"><var>.my-container</var> {</p>
+                        <p class="code">align-items: <var>center</var>;</p>
+                        <p class="code">}</p>
+                        <p class="code"><var>#The-dude</var> {</p>
+                        <p class="code">align-self: <var>center</var>;</p>
+                        <p class="code">}</p>
+                    </div>
+    
+                </div>
+            </div>
+
+            <p class="text">Note that float, clear and vertical-align have no effect on a flex item.</p>
+            <br><br><br>
+
+
+            <p class="text">And those are the basics of flexbox. Even though I didn't cover all of the flexbox's magic tricks in this guide,
+                there's a lot you can already do with what you've seen here, it's all practice from this point.
+                It may take you some time to get a good grasp of all the concepts, but I hope 
+                that this can help you at least a little in your journey, good luck!.
+            </p>
+            <br>
         </article>
+
+        <p class="text" style="text-align: center; color: white;">Special thanks to Chris Coyier and the people at CSS Tricks for having an awesome guide in which I heavily relied to write this.</p>
+        <div class="example" style="justify-content: center;">
+            <a href="https://github.com/OneNakedBass"><img id="github-photo" src="https://avatars.githubusercontent.com/u/71959291?v=4" alt="Martin Bracamonte's Github profile picture"></a>
+            <a href="https://github.com/OneNakedBass" style="color:white;"><p style="font-weight:bold">Find me on Github!</p></a>
+        </div>
+        <br><br><br>
     </main>
+    <br><br>
+
 </body>
 
 <script src="./script.js"></script>
