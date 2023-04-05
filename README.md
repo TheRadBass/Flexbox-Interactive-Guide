@@ -1,5 +1,7 @@
 # Flexbox Interactive Guide
 
+[Click here to access the guide](https://theradbass.github.io/Flexbox-Interactive-Guide/)
+
 This flexbox guide is inspired on the [CSS's Tricks's Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), and has been created as an interactive example of what I've been learned there.
 
 ## Approach
